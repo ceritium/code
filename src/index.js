@@ -105,6 +105,11 @@ export default class CodeTool {
      */
     textarea.addEventListener('keydown', (event) => {
       switch (event.code) {
+        case 'Backspace':
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          event.stopPropagation();
+          break;
         case 'Tab':
           this.tabHandler(event);
           break;
